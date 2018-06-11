@@ -1,0 +1,102 @@
+.hero { 
+    background: black url('assets/images/birdy.jpg') center / cover;
+    /* The image used */
+
+}
+@media (max-width: 1024px) { .hero { background: black url(assets/images/hero-2.jpg) center / cover; } }
+@media (max-width:  768px) { .hero { background: black url(assets/images/hero-3.jpg) center / cover; } } 
+
+
+.title{
+    color: white; 
+}
+.is-horizontal-center {
+    justify-content: center;
+  }
+#BCN { 
+    background: black url('assets/images/apotheke.jpg') center / cover;
+    /* The image used */
+    height: 821px; 
+
+}
+
+.button { margin: 0 auto; display: block }
+
+
+@font-face {
+    font-family: myWCFont;
+    src: url(assets/fonts/DushaWC18.ttf);
+}   
+h1, h2, h3{
+    font-family: myWCFont;
+}
+.center, .center-column, .top, .right, .bottom, .left {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.center-column {
+    flex-direction: column;
+}
+#a {grid-area: a;}
+#b {grid-area: b;}
+#c {grid-area: c;}
+#d {grid-area: d;}
+#e {grid-area: e;}
+#grid {
+    display: grid;
+    grid-template-areas: "a a a a"
+                         "b c d e";
+
+grid-row-gap: 1rem;
+}
+@media (max-width: 512px){
+    #grid {
+        grid-template-areas: "a a a"
+                             "b c d"
+                             "e e e"
+
+    }                   
+}
+.top    { align-items:     flex-start; }
+.right  { justify-content: flex-end;   }
+.bottom { align-items:     flex-end;   }
+.left   { justify-content: flex-start; }
+
+.single-spaced, .single-spaced * {
+    line-height: 1;
+}
+
+@media (max-width: 1024px) {
+	.desktop {
+		display: none;
+	}
+}
+
+.box {
+    background-color: #218D9B;
+    height: 100px;
+    width: 100px;
+  }
+  
+  .transform {
+    -webkit-transition: all 2s ease;  
+    -moz-transition: all 2s ease;  
+    -o-transition: all 2s ease;  
+    -ms-transition: all 2s ease;  
+    transition: all 2s ease;
+  }
+  
+  .transform-active {
+    background-color: #45CEE0;
+    height: 200px;
+    width: 200px;
+  }
+    
+
+.animated {
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
