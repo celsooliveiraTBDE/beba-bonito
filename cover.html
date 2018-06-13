@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,14 +9,11 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link rel="shortcut icon" type="image/jpg" href="assets/images/tbdelogo.jpg" />
-
-</head>
-
 <body>
 
     <section class="hero is-dark is-fullheight" id="main">
         <div class="hero-head">
-            <div class="columns is-mobile is-marginless heading has-text-weight-bold">
+            <div class="columns is-mobile is-marginless heading has-text-weight-bold ">
                 <div class="column left">
                     <figure class="navbar-item image">
                         <a href="http://www.instagram.com/thebestdrinkever">
@@ -36,9 +32,12 @@
 
                     <p class="navbar-item desktop has-text-white desktop">DISCOVER </p>
                     <p class="navbar-item desktop has-text-white desktop">SIGN UP</p>
-                    <figure class="navbar-item image">
-                        <i class="fas fa-3x fa-bars has-text-white" style="width: 1rem; height: 1rem;"></i>
-                    </figure>
+                    <a role="button" class="navbar-burger nav-toggle" id="nav-toggle" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+
                 </div>
             </div>
         </div>
@@ -48,18 +47,20 @@
                     #BEBABONITO
                 </h1>
                 <h2 class="subtitle is-3 has-text-centered has-text-danger">
-                    RUSSIA 2018
+                    WORLD TOUR 2018
                 </h2>
-                <button class="button is-danger is-overlay is-rounded" value="BEBA BONITO" id='my-button'>BEBA BONITO</button>
+
             </div>
         </div>
         <main class="hero-foot center" style="padding: 2rem;">
             <div id="grid" style="width: 768px;">
                 <div id="a" class="center-column">
                     <p class="has-text-centered has-text-white">
-                        ​This Summer, we are travelling the globe in Search of the #BEBABONITO, o
+                        ​This Summer, follow Renaldo Oliveira, retired soccer player and drinks extraordinaire as we follow his travels around the globe in Search of
+                        the #BEBABONITO, inspired in the iconic 
                         <small class="has-text-small">
-                        joga bonito </small> often The Best Drink Ever
+                            <i>joga bonito</i>
+                        </small> which popularized Brazilian's ultimate sense of craftsmanship.
                     </p>
                 </div>
                 <div id="b" class="center-column">
@@ -85,46 +86,77 @@
                     <p class="subtitle is-7 has-text-white"> Recipes</p>
                 </div>
                 <div id="e" class="center-column">
-                    <a class="button is-danger is-inverted is-rounded is-outlined has-text-weight-bold" style="width: 100%; border: 0.15em solid white;">
-                        Reserve Now
+                    <a class="button is-danger is-inverted is-rounded is-outlined has-text-weight-bold" style="width: 100%; border: 0.15em solid white;"
+                        id='my-button'>
+                        #BEBABONITO
                     </a>
                 </div>
             </div>
         </main>
     </section>
-    <div class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-card">
-              <header class="modal-card-head">
-                <p class="modal-card-title">Modal title</p>
-                <button class="delete" aria-label="close"></button>
-              </header>
-              <section class="modal-card-body">
-                  <div class="container is-dark has-text-white">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/TSL4WC-6tTo?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-                    <footer class="modal-card-foot">
-                <button class="button is-success">Save changes</button>
-                <button class="button" id="cancel">Cancel</button>
-              </footer>
-            </div>
-          </div>
 </body>
+<div class="modal">
+    <div class="modal-background is-dark"></div>
+    <div class="modal-card is-dark">
+        <header class="modal-card-head is-danger">
+            <p class="modal-card-title">#BEBABONITO</p>
+            <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <div class="container is-dark has-text-white">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TSL4WC-6tTo?autoplay=0&amp;rel=0&amp;controls=0&amp;showinfo=0"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <footer class="modal-card-foot">
+                <button class="button" id="cancel">Close</button>
+            </footer>
+    </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script>
 
+    jQuery(document).ready(function ($) {
 
 
-    $("#my-button").click(function () {
-        // $('.hero-foot').toggleClass('transform-active');
-        $('.modal').addClass('is-active');
-    });
-    $("#cancel").click(function () {
-        // $('.hero-foot').toggleClass('transform-active');
-        $('.modal').removeClass('is-active');
-    });
+        $("#my-button").click(function () {
+            // $('.hero-foot').toggleClass('transform-active');
+            $('.modal').addClass('is-active');
+        });
+        $("#cancel").click(function () {
+            // $('.hero-foot').toggleClass('transform-active');
+            $('.modal').removeClass('is-active');
+        });
+        document.addEventListener('DOMContentLoaded', function () {
 
+            // Get all "navbar-burger" elements
+            var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            // Check if there are any navbar burgers
+            if ($navbarBurgers.length > 0) {
+
+                // Add a click event on each of them
+                $navbarBurgers.forEach(function ($el) {
+                    $el.addEventListener('click', function () {
+
+                        // Get the target from the "data-target" attribute
+
+
+                        var $toggle = $('#nav-toggle');
+                        var $menu = $('#nav-menu');
+
+                        $toggle.click(function () {
+                            $(this).toggleClass('is-active');
+                            $menu.toggleClass('is-active');
+                        });
+                    });
+                });
+
+            }
+        });
+
+    })
 </script>
 
 </html>
