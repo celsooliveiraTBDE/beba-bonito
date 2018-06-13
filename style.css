@@ -120,3 +120,6 @@ grid-row-gap: 1rem;
   animation-fill-mode: both;
   animation-iteration-count: infinite;
 }
+video {
+	height: 25vh;
+}
